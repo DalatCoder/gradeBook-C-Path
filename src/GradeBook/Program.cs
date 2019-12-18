@@ -11,6 +11,7 @@
             book.AddGrade(75.0);
 
             book.ShowStatistics();
+            System.Console.WriteLine("Text SSH key remote!");
         }
     }
 }
