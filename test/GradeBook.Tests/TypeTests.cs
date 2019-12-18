@@ -9,14 +9,14 @@ namespace GradeBook.Tests
         public void CSharpCanPassByRef()
         {
             var book1 = GetBook("Book 1");
-            GetBookSetName(ref book1, "New Name");
+            GetBookSetName(out book1, "New Name");
 
             Assert.Equal("New Name", book1.Name);
         }
 
-        private void GetBookSetName(ref Book book, string name)
+        private void GetBookSetName(out Book book, string name)
         {
-            book = new Book(name); // passed by value, change value of local var book
+            book = new Book(name); // pass by reference ref and out
         }
 
         [Fact]
