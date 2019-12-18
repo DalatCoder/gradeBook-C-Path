@@ -1,4 +1,6 @@
-﻿namespace GradeBook
+﻿using System;
+
+namespace GradeBook
 {
     class Program
     {
@@ -10,7 +12,8 @@
             book.AddGrade(70.5);
             book.AddGrade(75.0);
 
-            book.ShowStatistics();
+            var stats = book.GetStatistics();
+            book.ShowStatistics(stats);
         }
     }
 }
