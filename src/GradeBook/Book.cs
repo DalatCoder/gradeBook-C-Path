@@ -7,21 +7,8 @@ namespace GradeBook
     {
         public string Name
         {
-            get
-            {
-                return name;
-            }
-            set
-            {
-                if (!string.IsNullOrEmpty(value))
-                {
-                    name = value;
-                }
-                else
-                {
-                    throw new ArgumentException("Invaid name!");
-                }
-            }
+            get;
+            set;
         }
 
         public Book()
@@ -128,6 +115,5 @@ namespace GradeBook
         }
 
         List<double> grades;
-        private string name;
     }
 }
