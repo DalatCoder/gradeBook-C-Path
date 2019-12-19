@@ -5,15 +5,31 @@ namespace GradeBook
 {
     public class Book
     {
-        List<double> grades;
-        public string Name;
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+            set
+            {
+                if (!string.IsNullOrEmpty(value))
+                {
+                    name = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Invaid name!");
+                }
+            }
+        }
 
         public Book()
         {
             grades = new List<double>();
         }
 
-        public Book(string name)
+        public Book(string name) : base()
         {
             Name = name;
         }
@@ -110,5 +126,8 @@ namespace GradeBook
             Console.WriteLine($"The low grade is: {result.Low}");
             Console.WriteLine($"The letter grade is: {result.Letter}");
         }
+
+        List<double> grades;
+        private string name;
     }
 }
