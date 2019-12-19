@@ -23,7 +23,7 @@ namespace GradeBook
             return grades.Count;
         }
 
-        public void AddLetterGrade(char letter)
+        public void AddLetter(char letter)
         {
             switch (letter)
             {
@@ -37,6 +37,10 @@ namespace GradeBook
 
                 case 'C':
                     AddGrade(70);
+                    break;
+
+                case 'D':
+                    AddGrade(60);
                     break;
 
                 default:

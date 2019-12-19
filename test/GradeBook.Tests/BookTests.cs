@@ -6,20 +6,6 @@ namespace GradeBook.Tests
     public class BookTests
     {
         [Fact]
-        public void BookAdddNewGrade()
-        {
-            //Given
-            var book = new Book();
-            book.AddGrade(89.1);
-            book.AddGrade(113);
-            book.AddGrade(-5.1);
-
-            //When
-
-            //Then
-            Assert.Equal(1, book.GetNumberOfGrades());
-        }
-        [Fact]
         public void BookCalculatesAnAverageGrade()
         {
             // arrange
