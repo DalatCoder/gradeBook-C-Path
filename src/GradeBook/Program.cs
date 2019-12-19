@@ -1,14 +1,24 @@
-﻿namespace GradeBook
+﻿using System;
+
+namespace GradeBook
 {
     class Program
     {
         static void Main(string[] args)
         {
             var book = new Book();
-            book.AddGrade(89.1);
-            book.AddGrade(90.2);
-            book.AddGrade(70.5);
-            book.AddGrade(75.0);
+
+            while (true)
+            {
+                Console.WriteLine("Enter a grade or 'q' to quit: ");
+                var input = Console.ReadLine();
+
+                if (input == "q") break;
+
+                var grade = double.Parse(input);
+                book.AddGrade(grade);
+            }
+
 
             var stats = book.GetStatistics();
             book.ShowStatistics(stats);
