@@ -3,6 +3,8 @@ using System.Collections.Generic;
 
 namespace GradeBook
 {
+    public delegate void GradeAddedDelegate(object sender, EventArgs args);
+
     public class Book
     {
         public string Name
@@ -57,6 +59,10 @@ namespace GradeBook
             if (grade >= 0 && grade <= 100)
             {
                 grades.Add(grade);
+                if (GradeAdded != null)
+                {
+                    GradeAdded(this, new EventArgs());
+                }
             }
             else
             {
@@ -114,6 +120,7 @@ namespace GradeBook
             Console.WriteLine($"The letter grade is: {result.Letter}");
         }
 
+        public event GradeAddedDelegate GradeAdded;
         List<double> grades;
     }
 }
