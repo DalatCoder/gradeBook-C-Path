@@ -73,6 +73,29 @@ namespace GradeBook
 
             result.Average /= grades.Count;
 
+            switch (result.Average)
+            {
+                case var d when d >= 90.0:
+                    result.Letter = 'A';
+                    break;
+
+                case var d when d >= 80:
+                    result.Letter = 'B';
+                    break;
+
+                case var d when d >= 70:
+                    result.Letter = 'C';
+                    break;
+
+                case var d when d >= 60:
+                    result.Letter = 'D';
+                    break;
+
+                default:
+                    result.Letter = 'F';
+                    break;
+            }
+
             return result;
         }
 
@@ -81,6 +104,7 @@ namespace GradeBook
             Console.WriteLine($"The average grade is: {result.Average}");
             Console.WriteLine($"The high grade is: {result.High}");
             Console.WriteLine($"The low grade is: {result.Low}");
+            Console.WriteLine($"The letter grade is: {result.Letter}");
         }
     }
 }
