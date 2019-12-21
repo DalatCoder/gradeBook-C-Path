@@ -10,14 +10,9 @@ namespace GradeBook
         public event GradeAddedDelegate GradeAdded;
         List<double> grades;
 
-        public Book()
+        public Book(string name) : base(name)
         {
             grades = new List<double>();
-        }
-
-        public Book(string name) : this()
-        {
-            Name = name;
         }
 
         public int NumberOfGrades => grades.Count;
