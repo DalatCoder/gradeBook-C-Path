@@ -5,30 +5,24 @@ namespace GradeBook
 {
     public delegate void GradeAddedDelegate(object sender, EventArgs args);
 
-    public class Book
+    public class Book : NameObject
     {
-        public string Name
-        {
-            get;
-            set;
-        }
+        public event GradeAddedDelegate GradeAdded;
+        List<double> grades;
 
         public Book()
         {
             grades = new List<double>();
         }
 
-        public Book(string name) : base()
+        public Book(string name) : this()
         {
             Name = name;
         }
 
-        public int GetNumberOfGrades()
-        {
-            return grades.Count;
-        }
+        public int NumberOfGrades => grades.Count;
 
-        public void AddLetter(char letter)
+        public void AddGrade(char letter)
         {
             switch (letter)
             {
@@ -119,8 +113,5 @@ namespace GradeBook
             Console.WriteLine($"The low grade is: {result.Low}");
             Console.WriteLine($"The letter grade is: {result.Letter}");
         }
-
-        public event GradeAddedDelegate GradeAdded;
-        List<double> grades;
     }
 }
