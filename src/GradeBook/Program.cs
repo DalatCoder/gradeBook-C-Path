@@ -6,23 +6,21 @@ namespace GradeBook
     {
         static void Main(string[] args)
         {
-            var book = new DiskBook("Disk book");
-            var book1 = new InMemoryBook("InMemory book");
+            var diskBook = new DiskBook("Disk book");
+            var inMemoryBook = new InMemoryBook("InMemory book");
 
-            book.GradeAdded += OnGradeAdded;
-            book1.GradeAdded += OnGradeAdded;
+            diskBook.GradeAdded += OnGradeAdded;
+            inMemoryBook.GradeAdded += OnGradeAdded;
 
-            EnterGrades(book);
+            EnterGrades(diskBook);
 
-            var stats = book.GetStatistics();
-            System.Console.WriteLine($"For the book: {book.Name}: ");
-            book.ShowStatistics(stats);
+            var diskBookStats = diskBook.GetStatistics();
+            diskBook.ShowStatistics(diskBookStats);
 
-            EnterGrades(book1);
+            EnterGrades(inMemoryBook);
 
-            var stats1 = book1.GetStatistics();
-            System.Console.WriteLine($"For the book: {book1.Name}: ");
-            book1.ShowStatistics(stats1);
+            var inMemoryBookStats = inMemoryBook.GetStatistics();
+            inMemoryBook.ShowStatistics(inMemoryBookStats);
         }
 
         private static void EnterGrades(IBook book)

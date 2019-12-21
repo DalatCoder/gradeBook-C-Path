@@ -68,13 +68,5 @@ namespace GradeBook
 
             return result;
         }
-
-        public void ShowStatistics(Statistics result)
-        {
-            Console.WriteLine($"The average grade is: {result.Average}");
-            Console.WriteLine($"The high grade is: {result.High}");
-            Console.WriteLine($"The low grade is: {result.Low}");
-            Console.WriteLine($"The letter grade is: {result.Letter}");
-        }
     }
 }
