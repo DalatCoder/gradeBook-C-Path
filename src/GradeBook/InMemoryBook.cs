@@ -15,7 +15,7 @@ namespace GradeBook
 
         public int NumberOfGrades => grades.Count;
 
-        public override void AddGrade(char letter)
+        public void AddGrade(char letter)
         {
             switch (letter)
             {
