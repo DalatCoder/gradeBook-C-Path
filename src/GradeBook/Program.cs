@@ -15,7 +15,7 @@ namespace GradeBook
             book.ShowStatistics(stats);
         }
 
-        private static void EnterGrades(Book book)
+        private static void EnterGrades(IBook book)
         {
             while (true)
             {

@@ -5,7 +5,7 @@ namespace GradeBook
 {
     public class InMemoryBook : Book
     {
-        public event GradeAddedDelegate GradeAdded;
+        public override event GradeAddedDelegate GradeAdded;
         List<double> grades;
 
         public InMemoryBook(string name) : base(name)
@@ -57,7 +57,7 @@ namespace GradeBook
             }
         }
 
-        public Statistics GetStatistics()
+        public override Statistics GetStatistics()
         {
             var result = new Statistics();
             result.Average = 0.0;
